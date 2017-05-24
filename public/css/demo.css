@@ -1,0 +1,171 @@
+.checkbox label {
+    cursor: pointer;
+    padding-left: 0;
+    color: rgba(0,0,0, 0.76);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+section{
+    width: 100%;
+    float: left;
+}
+blockquote ul,
+blockquote p{
+    font-size: 13px;
+    font-style: initial;
+}
+
+h6, .h6 {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+#pricing-taxes h3{
+    font-size: 2.2rem;
+}
+
+#pricing-taxes h2,
+#pricing-taxes h3,
+#pricing-taxes h4{
+    margin: 0 10px;
+}
+
+#pricing-taxes .form-group {
+     margin: 0; 
+     padding-bottom: 0;
+}
+
+#pricing-taxes .form-group .form-control {
+    font-size: 2.2rem;
+    text-align: right;
+    float: left;
+    line-height: 1;
+    padding-left: 7px;
+    margin: 0 0 0 3%;
+    margin-top: -7px;
+    width: 90%;
+}
+
+#pricing-taxes span {
+    float: left;
+    font-size: 1.8rem;
+    line-height: 1;
+    padding: 0;
+}
+
+
+#sanding-scraping .card-content{
+    padding: 0;
+}
+#sanding-scraping .card-plain{
+    margin: 0;
+}
+
+
+.sanding-scraping tr th {
+    text-align: center;
+}
+
+.sanding-scraping .checkbox {
+    margin: 0 auto;
+}
+
+.sanding-scraping .form-group {
+    margin: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sanding-scraping .form-control {
+    margin-bottom: 0;
+    margin-left: 10px;
+    max-width: 50px;
+    text-align: center;
+}
+
+.table > thead > tr > th, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > tbody > tr > td, 
+.table > tfoot > tr > td{
+    line-height: 1;
+}
+
+.form-control[disabled], 
+fieldset[disabled] .form-control, 
+.form-group .form-control[disabled], 
+fieldset[disabled]
+.form-group .form-control,
+label.control-label.disabled{
+    color: rgba(255,0,0,0.6);
+    font-size: 1.8rem !important;
+}
+
+.card .card-header .title{
+    display: flex;
+}
+/*dropdown select custom css*/
+select{
+    display: none;
+}
+
+.bootstrap-select .btn,
+.bootstrap-select .btn.btn-primary:hover,
+.bootstrap-select.btn-group .btn:active,
+.bootstrap-select.btn.btn-primary:focus,
+.bootstrap-select.btn-group.open > .dropdown-toggle.btn.btn-primary{
+    width: 100%;
+
+    margin-left: 0;
+    background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: transparent !important;
+    transition: background 0s ease-out;
+    border-radius: 0;
+    color: rgba(0,0,0, 0.76) !important;
+    padding-top: 0px;
+    padding-bottom: 6px;
+    font-size: 100%;
+    box-shadow: none !important;
+    padding-left: 0;
+}
+
+.btn-group, .btn-group-vertical {
+    /*margin: 4px 1px 5px;*/
+}
+
+.bootstrap-select .btn .caret {
+    margin-left: 0;
+    right: 10px;
+    position: absolute;
+    top: 10px;
+}
+
+.bootstrap-select {
+    min-width: 160px;
+}
+.dropdown-menu{
+    margin: 0;
+}
+.dropdown-menu.open {
+    box-shadow: none;
+    background: transparent;
+}
+.dropdown-menu.inner {
+    margin-top: -10px;
+}
+.dropdown-menu.inner li{
+    cursor: pointer;
+}
+
+.dropdown-menu.inner li .material-icons{
+    display: none;
+}
+
