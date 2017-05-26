@@ -21,7 +21,7 @@ class List extends Component {
 									<h4 className="title">Materials List</h4>
 								</div>
 								<div className="card-content table-responsive">
-									<table className="table table-striped">
+									<table className="table table-striped  table-hover">
 										<thead className="text-primary">
 											<tr>
 												<th><i className="material-icons">settings</i></th>
