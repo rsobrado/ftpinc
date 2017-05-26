@@ -68,3 +68,13 @@
 .tim-row h3{
     margin-top: 0;
 }
+.form-label{
+    font-size: 1.4rem ;
+}
+
+.form-group.label-floating.is-focused label.control-label .form-label{
+    font-size: 1.4rem ;
+}
+.is-focus.is-empty .form-label{
+    font-size: 1.4rem ;
+}

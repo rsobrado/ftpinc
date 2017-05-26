@@ -10,45 +10,39 @@ class New extends Component {
 			tax: 0,
 			total: 0
 		}
-		
 	};
 
-	handleChange(e){
+	calculateDiscount(e) {
 		const amount = e.target.value;
-		this.estimateTotal(amount);
-	};
-
-	calculateDiscount(e){
-		const amount = e.target.value;
-
 		var initialCost = parseInt(this.refs.cost.value);
-		var discount = initialCost * (amount/100);
-		var subTotal = initialCost - discount;
+		var discount = parseFloat(initialCost * (amount/100));
+		var subTotal = parseFloat(initialCost - discount);
 		var tax = parseFloat(subTotal * 0.0685).toFixed(2);
-		var finalCost = parseFloat(subTotal + (parseFloat(tax)));
+		var finalCost = subTotal + parseFloat(tax);
 
 		this.updateValues(amount,subTotal,finalCost,tax);
 	}
 
-	estimateTotal(e){
+	estimateTotal(e) {
 		const amount = e.target.value;
 		var initialCost = parseInt(amount);
-		var discount = initialCost * (this.refs.discount.value/100);
-		var subTotal = initialCost - discount;
+		var discount = parseFloat(initialCost * (this.refs.discount.value/100));
+		var subTotal = parseFloat(initialCost - discount);
 		var tax = parseFloat(subTotal * 0.0685).toFixed(2);
-		var finalCost = parseFloat(subTotal + (parseFloat(tax)));
+		var finalCost = subTotal + parseFloat(tax);
+		
+		if (amount==='') {
+			tax = 0;
+			finalCost = 0;
+		}
 
 		this.updateValues(amount,subTotal,finalCost,tax);
 	};
 
-	updateValues(amount,subtotal,finalcost,tax){
+	updateValues(amount,subtotal,finalcost,tax) {
 		this.setState({subtotal: subtotal});
 		this.setState({tax: tax});
-		this.setState({total: finalcost});
-		if (amount==='') {
-			this.setState({tax: 0});
-			this.setState({total: 0});
-		}
+		this.setState({total: finalcost.toFixed(2)});
 	};
 	
 	render() {
@@ -123,7 +117,6 @@ class New extends Component {
 														</div>
 													</div>
 												</div>
-
 											</div>
 											<div className="col-md-6">
 												mapa
@@ -461,31 +454,31 @@ class New extends Component {
 																						</td>
 																						<td>
 																							<div className="form-group label-floating">
-																								<span>%</span>
+																								<label className="control-label form-label">%</label>
 																								<input type="number" className="form-control text-success" min="0" max="100" />
 																							</div>
 																						</td>
 																						<td>
 																							<div className="form-group label-floating">
-																								<span>%</span>
+																								<label className="control-label form-label">%</label>
 																								<input type="number" min="0" max="100" className="form-control text-success" />
 																							</div>
 																						</td>
 																						<td>
 																							<div className="form-group label-floating">
-																								<span>%</span>
+																								<label className="control-label form-label">%</label>
 																								<input type="number" min="0" max="100" className="form-control text-success" />
 																							</div>
 																						</td>
 																						<td>
 																							<div className="form-group label-floating">
-																								<span>%</span>
+																								<label className="control-label form-label">%</label>
 																								<input type="number" max="100" min="0" className="form-control text-success" />
 																							</div>
 																						</td>
 																						<td>
 																							<div className="form-group label-floating">
-																								<span>%</span>
+																								<label className="control-label form-label">%</label>
 																								<input type="number" min="0" max="100" className="form-control text-success" />
 																							</div>
 																						</td>
@@ -724,9 +717,9 @@ class New extends Component {
 																		<div className="col-md-9">
 																			<h3 id="price">All Labor and Materials</h3> 
 																		</div>
-																		<div className="col-md-3 pull-right">
+																		<div className="col-md-3 ">
 																			<div className="form-group label-floating">
-																				<span>$</span>
+																				<label className="control-label form-label">$</label>
 																				<input type="number" ref="cost" className="form-control" onChange={(e)=>this.estimateTotal(e)}  min="0"  />
 																			</div>
 																		</div>
@@ -735,9 +728,9 @@ class New extends Component {
 																		<div className="col-md-9">
 																			<h3 id="price">Discount</h3>  
 																		</div>
-																		<div className="col-md-3 pull-right">
+																		<div className="col-md-3 ">
 																			<div className="form-group label-floating">
-																				<span>%</span>
+																				<label className="control-label form-label">%</label>
 																				<input type="number" ref="discount" className="form-control text-success" onChange={(e)=>this.calculateDiscount(e)} min="0" max="100" />
 																			</div>
 																		</div>
@@ -746,7 +739,7 @@ class New extends Component {
 																		<div className="col-md-9">
 																			<h3 id="tax">Sales Tax <small>(6.85%)</small></h3>
 																		</div>
-																		<div className="col-md-3 pull-right">
+																		<div className="col-md-3 ">
 																			<div className="form-group label-floating">
 																				<h3 className="text-warning pull-right">${this.state.tax}</h3>
 																			</div>

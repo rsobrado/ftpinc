@@ -44,7 +44,6 @@ class Layout extends Component {
 			</Router>
       	</div>
       </div>
-
     );
   }
 }
