@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../images/FT-logo.png';
 import sidebar from '../../images/sidebar-1.jpg';
 
-import {
-  BrowserRouter as Router,
-  NavLink,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
 	
@@ -113,7 +113,7 @@ class Profile extends Component {
 						<div className="card card-profile">
 							<div className="card-avatar">
 								<a href="#pablo">
-									<img className="img" src="../assets/img/faces/marc.jpg" />
+									<img className="img" src="../assets/img/faces/marc.jpg" alt="avatar"/>
 								</a>
 							</div>
 							<div className="content">

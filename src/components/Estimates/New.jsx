@@ -14,7 +14,7 @@ class New extends Component {
 
 	calculateDiscount(e) {
 		const amount = e.target.value;
-		var initialCost = parseInt(this.refs.cost.value);
+		var initialCost = parseInt(this.refs.cost.value,10);
 		var discount = parseFloat(initialCost * (amount/100));
 		var subTotal = parseFloat(initialCost - discount);
 		var tax = parseFloat(subTotal * 0.0685).toFixed(2);
@@ -25,7 +25,7 @@ class New extends Component {
 
 	estimateTotal(e) {
 		const amount = e.target.value;
-		var initialCost = parseInt(amount);
+		var initialCost = parseInt(amount,10);
 		var discount = parseFloat(initialCost * (this.refs.discount.value/100));
 		var subTotal = parseFloat(initialCost - discount);
 		var tax = parseFloat(subTotal * 0.0685).toFixed(2);
