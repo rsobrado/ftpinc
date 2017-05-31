@@ -13,7 +13,7 @@ class Navbar extends Component {
 						<span className="icon-bar"></span>
 						<span className="icon-bar"></span>
 					</button>
-					<a className="navbar-brand" href="#">Final Touch</a>
+					<Link to="/" className="navbar-brand" href="#">Final Touch</Link>
 				</div>
 				<div className="collapse navbar-collapse">
 					<ul className="nav navbar-nav navbar-right">

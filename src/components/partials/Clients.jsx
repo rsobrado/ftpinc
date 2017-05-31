@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import New from './Clients/New'
-import List from './Clients/List'
+import New from './clients/New'
+import List from './clients/List'
 
 class Clients extends Component {
   render() {
@@ -14,7 +14,7 @@ class Clients extends Component {
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	);
   }
 }

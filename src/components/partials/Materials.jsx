@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import New from './Estimates/New'
-import List from './Estimates/List'
+import New from './materials/New'
+import List from './materials/List'
 
-class Estimates extends Component {
+class Materials extends Component {
   render() {
 	return (
 		<div className="container-fluid">
@@ -14,9 +14,9 @@ class Estimates extends Component {
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	);
   }
 }
 
-export default Estimates;
+export default Materials;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../../images/FT-logo.png';
-import sidebar from '../../images/sidebar-1.jpg';
+import logo from '../../../images/FT-logo.png';
+import sidebar from '../../../images/sidebar-1.jpg';
 
 import { NavLink } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ class Sidebar extends Component {
     return (
 
        	<div className="sidebar" data-color="red" data-image={sidebar}>
-   			
+
    			<div className="logo">
    				<a href="index.html" className="simple-text">
    					<img src={logo}  alt="Final Touch Painting inc."/>
@@ -47,7 +47,7 @@ class Sidebar extends Component {
 						</NavLink>
 					</li>
    				</ul>
-   				
+
    			</div>
    		</div>
     );
