@@ -2,29 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class List extends Component {
-	constructor() {
-		super();
-		this.state = 	{ clients : [] };
-	};
-
-	componentDidMount() {    
-		var that = this;
-		var url = '../../data/clients.js?format=json'
-
-		fetch(url)
-		.then(function(response) {
-			if (response.status >= 400) {
-				throw new Error("Bad response from server");
-			}
-			return response.json();
-		})
-		.then(function(data) {
-			that.setState({ clients: data });
-		});
-	}
 
   render() {
-		var clients = this.state.clients;
+		var clients = this.props.clients;
 	return (
 			<div className="panel panel-default">
 				<div className="panel-heading">
@@ -54,7 +34,7 @@ class List extends Component {
 											</tr>
 										</thead>
 										<tbody>
-											{ clients.map(client => 
+											{ clients.map(client =>
 													<tr key={client.key}>
 														<td><Link to="/ClientProfile"><i className="material-icons">visibility</i></Link></td>
 														<td><Link to="/ClientProfile">{client.firstName} {client.lastName}</Link></td>
@@ -62,7 +42,7 @@ class List extends Component {
 														<td>{client.city} </td>
 														<td>{client.zip} </td>
 													</tr>
-												) 
+												)
 											}
 										</tbody>
 									</table>

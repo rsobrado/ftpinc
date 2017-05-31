@@ -2,29 +2,13 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class List extends Component {
-	constructor() {
-		super();
-		this.state = 	{ materials : [] };
-	};
-
-	componentDidMount() {    
-		var that = this;
-		var url = '../../data/materials.js?format=json'
-
-		fetch(url)
-		.then(function(response) {
-			if (response.status >= 400) {
-				throw new Error("Bad response from server");
-			}
-			return response.json();
-		})
-		.then(function(data) {
-			that.setState({ materials: data });
-		});
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = 	{ materials : [this.props.materials] };
+	// };
 
   render() {
-		var materials = this.state.materials;
+		var materials = this.props.materials;
 
 		return (
 			<div className="panel panel-default">
@@ -54,14 +38,14 @@ class List extends Component {
 											</tr>
 										</thead>
 										<tbody>
-											{ materials.map(material => 
+											{ materials.map(material =>
 													<tr key={material.key}>
 														<td><Link to="/MaterialProfile"><i className="material-icons">visibility</i></Link></td>
 														<td><Link to="/MaterialProfile">{material.name}</Link></td>
 														<td>{material.description}</td>
 														<td className="text-primary">${material.cost}</td>
 													</tr>
-												) 
+												)
 											}
 										</tbody>
 									</table>

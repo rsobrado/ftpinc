@@ -37,12 +37,6 @@ class Navbar extends Component {
 								<li><a href="#">Another One</a></li>
 							</ul>
 						</li>
-						<li>
-							<a href="#pablo" className="dropdown-toggle" data-toggle="dropdown">
- 							   <i className="material-icons">person</i>
- 							   <p className="hidden-lg hidden-md">Profile</p>
-	 						</a>
-						</li>
 					</ul>
 
 					<form className="navbar-form navbar-right" role="search">

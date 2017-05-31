@@ -7,7 +7,7 @@ class New extends Component {
 		this.state = 	{ materials : [] };
 	};
 
-	componentDidMount() {    
+	componentDidMount() {
 		var that = this;
 		var url = '../../data/materials.js?format=json'
 
@@ -24,10 +24,10 @@ class New extends Component {
 	};
 
 	newMaterial(e) {
-			e.preventDefault();
-			// const name = e.refs.name.value;
-			console.log('nuevo'+ name);
-		}
+		e.preventDefault();
+		const name = e.refs.name;
+		console.log('nuevo'+ name);
+	}
 
 	render() {
 
@@ -35,13 +35,13 @@ class New extends Component {
 			<div className="panel panel-default">
 				<div className="panel-heading">
 					<h4 className="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion" href="#newEstimate">
+						<a data-toggle="collapse" data-parent="#accordion" href="#newMaterial">
 							<i className="material-icons">person_add</i>
 							<span className="">Create a new Material</span>
 						</a>
 					</h4>
 				</div>
-				<div id="newEstimate" className="panel-collapse collapse ">
+				<div id="newMaterial" className="panel-collapse collapse ">
 					<div className="panel-body">
 						<div className="col-md-12">
 							<div className="card">
@@ -50,7 +50,7 @@ class New extends Component {
 								</div>
 								<div className="card-content">
 									<form onSubmit={(e)=>this.newMaterial(e)} >
-									
+
 										<div className="row">
 											<div className="col-md-2">
 												<div className="form-group label-floating">

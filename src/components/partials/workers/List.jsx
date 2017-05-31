@@ -2,30 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class List extends Component {
-	constructor() {
-		super();
-		this.state = 	{ workers : [] };
-	};
-
-	componentDidMount() {    
-		var that = this;
-		var url = '../../data/workers.js?format=json'
-
-		fetch(url)
-		.then(function(response) {
-			if (response.status >= 400) {
-				throw new Error("Bad response from server");
-			}
-			return response.json();
-		})
-		.then(function(data) {
-			that.setState({ workers: data });
-		});
-	}
+	// constructor() {
+	// 	super();
+	// 	this.state = 	{ workers : [] };
+	// };
 
 	render() {
-		var workers = this.state.workers;
-		
+		var workers = this.props.workers;
+
 		return (
 			<div className="panel panel-default">
 				<div className="panel-heading">
@@ -54,14 +38,14 @@ class List extends Component {
 											</tr>
 										</thead>
 										<tbody>
-											{ workers.map(worker => 
+											{ workers.map(worker =>
 													<tr key={worker.key.toString()}>
 														<td><Link to="/WorkerProfile"><i className="material-icons">visibility</i></Link></td>
 														<td><Link to="/WorkerProfile">{worker.firstName} {worker.lastName}</Link></td>
 														<td>{worker.role}</td>
 														<td className="text-primary">${worker.hourRate * worker.billedTime}</td>
 													</tr>
-												) 
+												)
 											}
 										</tbody>
 									</table>

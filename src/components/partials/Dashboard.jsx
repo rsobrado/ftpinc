@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Dashboard extends Component {
@@ -7,69 +8,53 @@ class Dashboard extends Component {
 		<div className="container-fluid">
 			<div className="row">
 				<div className="col-lg-3 col-md-6 col-sm-6">
-					<div className="card card-stats">
-						<div className="card-header" data-background-color="orange">
-							<i className="material-icons">content_copy</i>
-						</div>
-						<div className="card-content">
-							<p className="category">Used Space</p>
-							<h3 className="title">49/50<small>GB</small></h3>
-						</div>
-						<div className="card-footer">
-							<div className="stats">
-								<i className="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>
+					<div className="dashboard-item card card-stats">
+						<Link to="/Estimates">
+							<div className="card-header" data-background-color="green">
+								 <i className="material-icons">assignment</i>
 							</div>
-						</div>
-					</div>
+							<div className="card-content">
+								Estimates
+							</div>
+					 </Link>
+				 </div>
 				</div>
+					<div className="col-lg-3 col-md-6 col-sm-6">
+						<Link to="/Clients">
+							<div className="dashboard-item card card-stats">
+								<div className="card-header" data-background-color="orange">
+									<i className="material-icons">folder_shared</i>
+								</div>
+								<div className="card-content">
+									Clients
+								</div>
+							</div>
+						</Link>
+					</div>
 				<div className="col-lg-3 col-md-6 col-sm-6">
-					<div className="card card-stats">
-						<div className="card-header" data-background-color="green">
-							<i className="material-icons">store</i>
-						</div>
-						<div className="card-content">
-							<p className="category">Revenue</p>
-							<h3 className="title">$34,245</h3>
-						</div>
-						<div className="card-footer">
-							<div className="stats">
-								<i className="material-icons">date_range</i> Last 24 Hours
+					<Link to="/Workers">
+						<div className="dashboard-item card card-stats">
+							<div className="card-header" data-background-color="purple">
+								<i className="material-icons">accessibility</i>
+							</div>
+							<div className="card-content">
+								Workers
 							</div>
 						</div>
-					</div>
-				</div>
-				<div className="col-lg-3 col-md-6 col-sm-6">
-					<div className="card card-stats">
-						<div className="card-header" data-background-color="red">
-							<i className="material-icons">info_outline</i>
-						</div>
-						<div className="card-content">
-							<p className="category">Fixed Issues</p>
-							<h3 className="title">75</h3>
-						</div>
-						<div className="card-footer">
-							<div className="stats">
-								<i className="material-icons">local_offer</i> Tracked from Github
-							</div>
-						</div>
-					</div>
+					</Link>
 				</div>
 
 				<div className="col-lg-3 col-md-6 col-sm-6">
-					<div className="card card-stats">
-						<div className="card-header" data-background-color="blue">
-							<i className="fa fa-twitter"></i>
-						</div>
-						<div className="card-content">
-							<p className="category">Followers</p>
-							<h3 className="title">+245</h3>
-						</div>
-						<div className="card-footer">
-							<div className="stats">
-								<i className="material-icons">update</i> Just Updated
+					<Link to="/Materials">
+						<div className="dashboard-item card card-stats">
+							<div className="card-header" data-background-color="blue">
+								 <i className="material-icons">format_paint</i>
+							</div>
+							<div className="card-content">
+								Materials
 							</div>
 						</div>
-					</div>
+					</Link>
 				</div>
 			</div>
 
@@ -357,7 +342,7 @@ class Dashboard extends Component {
 												<div className="card-content table-responsive">
 														<table className="table table-hover">
 																<thead className="text-warning">
-																	<tr> 
+																	<tr>
 																			<th>ID</th>
 																		<th>Name</th>
 																		<th>Salary</th>

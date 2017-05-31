@@ -6,7 +6,7 @@
     "phoneNumber" : "4078899490",
     "email" : "tflores@gmail.com",
     "role" : "Painter",
-    "hourRate" : "10",
+    "hourRate" : "12",
     "billedTime" : "30"
   },
   {
