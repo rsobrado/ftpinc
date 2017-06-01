@@ -2,16 +2,28 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class List extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = 	{ materials : [this.props.materials] };
-	// };
+	constructor(){
+		super();
+		this.state = {
+			search : ""
+		};
+	};
 
-  render() {
-		var materials = this.props.materials;
+	updateList( event ){
+		this.setState( {search: event.target.value} )
+	};
+
+	render() {
+		let materials = this.props.materials.filter(
+			(material) => {
+				return material.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+			}
+		);
 
 		return (
 			<div className="panel panel-default">
+
+
 				<div className="panel-heading">
 					<h4 className="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
@@ -23,6 +35,12 @@ class List extends Component {
 				<div id="collapseTwo" className="panel-collapse collapse in">
 					<div className="panel-body">
 						<div className="col-md-12">
+							<div className="pull-right" >
+								<div className="form-group label-floating">
+									<label className="control-label"> <i className="material-icons">search</i></label>
+									<input type="text" className="form-control" value={this.state.search} onChange={this.updateList.bind(this)}/>
+								</div>
+							</div>
 							<div className="card">
 								<div className="card-header" data-background-color="orange">
 									<h4 className="title">Materials List</h4>
@@ -38,13 +56,17 @@ class List extends Component {
 											</tr>
 										</thead>
 										<tbody>
-											{ materials.map(material =>
-													<tr key={material.key}>
-														<td><Link to="/MaterialProfile"><i className="material-icons">visibility</i></Link></td>
-														<td><Link to="/MaterialProfile">{material.name}</Link></td>
-														<td>{material.description}</td>
-														<td className="text-primary">${material.cost}</td>
-													</tr>
+											{
+												materials.map((material) => {
+														return (
+															<tr key={material.key}>
+															<td><Link to="/MaterialProfile"><i className="material-icons">visibility</i></Link></td>
+															<td><Link to="/MaterialProfile">{material.name}</Link></td>
+															<td>{material.description}</td>
+															<td className="text-primary">${material.cost}</td>
+															</tr>
+														)
+													}
 												)
 											}
 										</tbody>

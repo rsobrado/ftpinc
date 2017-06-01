@@ -2,35 +2,18 @@ import React, { Component } from 'react';
 
 
 class New extends Component {
-	constructor() {
-		super();
-		this.state = 	{ materials : [] };
+	constructor(props) {
+		super(props);
+		this.state = 	{ materials : this.props.materials };
 	};
 
-	componentDidMount() {
-		var that = this;
-		var url = '../../data/materials.js?format=json'
-
-		fetch(url)
-		.then(function(response) {
-			if (response.status >= 400) {
-				throw new Error("Bad response from server");
-			}
-			return response.json();
-		})
-		.then(function(data) {
-			that.setState({ materials: data });
-		});
-	};
-
-	newMaterial(e) {
-		e.preventDefault();
-		const name = e.refs.name;
-		console.log('nuevo'+ name);
+	newMaterial(event) {
+		event.preventDefault();
+		var name = event.target;
+		console.log(name);
 	}
 
 	render() {
-
 		return (
 			<div className="panel panel-default">
 				<div className="panel-heading">
@@ -49,7 +32,7 @@ class New extends Component {
 									<h4 className="title"><i className="material-icons">assignment</i> New Estimate</h4>
 								</div>
 								<div className="card-content">
-									<form onSubmit={(e)=>this.newMaterial(e)} >
+									<form onSubmit={this.newMaterial.bind(this)} name="holio">
 
 										<div className="row">
 											<div className="col-md-2">

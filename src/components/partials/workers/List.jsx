@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class List extends Component {
-	// constructor() {
-	// 	super();
-	// 	this.state = 	{ workers : [] };
-	// };
+	constructor() {
+		super();
+		this.state = 	{ search : '' };
+	};
+
+	updateList( event ){
+		this.setState( {search: event.target.value} )
+	};
 
 	render() {
-		var workers = this.props.workers;
+		let workers = this.props.workers.filter(
+			(worker) => {
+				var fullname = worker.firstName + ' ' + worker.lastName;
+				return fullname.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+			}
+		);
 
 		return (
 			<div className="panel panel-default">
@@ -23,6 +32,12 @@ class List extends Component {
 				<div id="collapseTwo" className="panel-collapse collapse in">
 					<div className="panel-body">
 						<div className="col-md-12">
+							<div className=" pull-right" >
+								<div className="form-group label-floating">
+									<label className="control-label"> <i className="material-icons">search</i></label>
+									<input type="text" className="form-control" value={this.state.search} onChange={this.updateList.bind(this)}/>
+								</div>
+							</div>
 							<div className="card">
 								<div className="card-header" data-background-color="orange">
 									<h4 className="title">Workers List</h4>

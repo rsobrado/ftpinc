@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Footer from './partials/commons/Footer';
 import Navbar from './partials/commons/Navbar';
 import Sidebar from './partials/commons/Sidebar';
@@ -18,9 +18,7 @@ import {
 } from 'react-router-dom';
 
 
-class Layout extends Component {
-  render() {
-    return (
+const Layout =() =>
       <div className="Layout">
       	<div className="wrapper">
   	    	<Router>
@@ -44,9 +42,6 @@ class Layout extends Component {
     			</Router>
       	</div>
       </div>
-    );
-  }
-}
 
 
 export default Layout;
