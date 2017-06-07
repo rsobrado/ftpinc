@@ -17,12 +17,6 @@ class Navbar extends Component {
 				</div>
 				<div className="collapse navbar-collapse">
 					<ul className="nav navbar-nav navbar-right">
-						<li>
-							<Link to="/" className="dropdown-toggle" data-toggle="dropdown">
-								<i className="material-icons">dashboard</i>
-								<p className="hidden-lg hidden-md">Dashboard</p>
-							</Link>
-						</li>
 						<li className="dropdown">
 							<a href="#" className="dropdown-toggle" data-toggle="dropdown">
 								<i className="material-icons">notifications</i>
@@ -38,16 +32,6 @@ class Navbar extends Component {
 							</ul>
 						</li>
 					</ul>
-
-					<form className="navbar-form navbar-right" role="search">
-						<div className="form-group  is-empty">
-							<input type="text" className="form-control" placeholder="Search" />
-							<span className="material-input"></span>
-						</div>
-						<button type="submit" className="btn btn-white btn-round btn-just-icon">
-							<i className="material-icons">search</i><div className="ripple-container"></div>
-						</button>
-					</form>
 				</div>
 			</div>
 		</nav>

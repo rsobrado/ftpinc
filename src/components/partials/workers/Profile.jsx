@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 class Profile extends Component {
-	
+
 	render() {
 		return (
+			<div className="container-fluid">
 				<div className="row">
 
 					<div className="col-md-12">
@@ -21,9 +22,9 @@ class Profile extends Component {
 								<h4 className="title">Worker Profile</h4>
 							</div>
 							<div className="card-content">
-								
+
 								<form>
-								
+
 									<div className="row">
 										<div className="col-md-2">
 											<div className="form-group label-floating">
@@ -108,7 +109,8 @@ class Profile extends Component {
 						</div>
 					</div>
 				</div>
-			);
+			</div>
+		);
 	}
 }
 

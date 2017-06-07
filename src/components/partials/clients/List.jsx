@@ -33,15 +33,19 @@ class List extends Component {
 				<div id="collapseTwo" className="panel-collapse collapse in">
 					<div className="panel-body">
 						<div className="col-md-12">
-							<div className="pull-right" >
-								<div className="form-group label-floating">
-									<label className="control-label"> <i className="material-icons">search</i></label>
-									<input type="text" className="form-control" value={this.state.search} onChange={this.updateList.bind(this)}/>
-								</div>
-							</div>
-							<div className="card">
+							<div className="list card">
 								<div className="card-header" data-background-color="orange">
-									<h4 className="title">Clients List</h4>
+									<div className="title">
+										<div className="col-md-3">
+											<h4>Clients</h4>
+										</div>
+										<div className="col-md-3 col-sm-12">
+											<div className="form-group label-floating">
+											<label className="control-label"> <i className="material-icons">search</i></label>
+											<input type="text" className="form-control" value={this.state.search} onChange={this.updateList.bind(this)}/>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div className="card-content table-responsive">
 									<table className="table table-striped table-hover">
