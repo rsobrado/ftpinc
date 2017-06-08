@@ -13,6 +13,9 @@ class List extends Component {
 	updateList( event ){
 		this.setState( {search: event.target.value} )
 	};
+	deleteMaterial(key){
+		this.props.onDeleteMaterial(key);
+	}
 
 	render() {
 		let materials = this.props.materials.filter(
@@ -37,10 +40,10 @@ class List extends Component {
 						<table className="table table-striped  table-hover">
 							<thead className="text-primary">
 								<tr>
-									<th><i className="material-icons">settings</i></th>
 									<th>Name</th>
 									<th>Description</th>
 									<th>Cost</th>
+									<th><i className="material-icons">settings</i></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -48,10 +51,13 @@ class List extends Component {
 									materials.map((material) => {
 											return (
 												<tr key={material.key}>
-												<td><Link to={'/MaterialProfile/:'+material.key}><i className="material-icons">visibility</i></Link></td>
-												<td><Link to="/MaterialProfile">{material.name}</Link></td>
-												<td>{material.description}</td>
-												<td className="text-primary">${material.cost}</td>
+													<td><Link to="/MaterialProfile">{material.name}</Link></td>
+													<td>{material.description}</td>
+													<td className="text-primary">${material.cost}</td>
+														<td>
+															<Link className="text-success" to={'/MaterialProfile/:'+material.key}><i className="material-icons ">edit</i></Link>
+															<a href="#" onClick={this.deleteMaterial.bind(this, material.key)} ><i className="material-icons " >close</i></a>
+														</td>
 												</tr>
 											)
 										}

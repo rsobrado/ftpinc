@@ -12,17 +12,9 @@ class Materials extends Component {
 		this.loadData();
 	}
 
-
-	componentWillReceiveProps(nextProps){
-		// this.setState({materials : nextProps.materials});
-    this.setState((prevState, props) => {
-      return {materials: props};
-    });
-	}
-
   loadData(){
     var that = this;
-    var url = '../data/materials.js?format=json'
+    var url = '/data/materials.js?format=json'
 
     fetch(url)
     .then(function(response) {
@@ -40,12 +32,20 @@ class Materials extends Component {
     this.setState({materials : materialsUpdate});
   }
 
+  onDeleteMaterial(materialKey){
+    console.log(materialKey);
+    let materials = this.state.materials;
+    let index = materials.findIndex(x => x.key === materialKey);
+    materials.splice(index,1);
+    this.setState({materials : materials});
+  }
+
   render() {
   	return (
   		<div className="container-fluid">
   			<div className="row">
           <New materials={this.state.materials} onAddMaterial={this.onAddMaterial.bind(this)}/>
-          <List materials={this.state.materials} />
+          <List materials={this.state.materials} onDeleteMaterial={this.onDeleteMaterial.bind(this)} />
   			</div>
   		</div>
   	);

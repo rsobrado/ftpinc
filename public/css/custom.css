@@ -22,6 +22,42 @@ h6, .h6 {
     font-size: 1.5em;
     font-weight: 500;
 }
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td{
+    line-height: 1;
+}
+
+.form-control[disabled],
+fieldset[disabled] .form-control,
+.form-group .form-control[disabled],
+fieldset[disabled]
+.form-group .form-control,
+label.control-label.disabled{
+    color: rgba(255,0,0,0.6);
+    font-size: 1.8rem !important;
+}
+
+label.control-label.form-label {
+    font-size: 1.8rem!important;
+    font-weight: 300;
+    top: -15px !important;
+}
+
+.flex{
+  display: flex;
+}
+
+.form-group {
+    margin: 0;
+}
+
+/******** Sections **********/
+
 #pricing-taxes h3{
     font-size: 2.2rem;
 }
@@ -55,14 +91,12 @@ h6, .h6 {
     padding: 0;
 }
 
-
 #sanding-scraping .card-content{
     padding: 0;
 }
 #sanding-scraping .card-plain{
     margin: 0;
 }
-
 
 .sanding-scraping tr th {
     text-align: center;
@@ -87,47 +121,48 @@ h6, .h6 {
     text-align: center;
 }
 
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td{
-    line-height: 1;
-}
+/******** custom card *********/
 
-.form-control[disabled],
-fieldset[disabled] .form-control,
-.form-group .form-control[disabled],
-fieldset[disabled]
-.form-group .form-control,
-label.control-label.disabled{
-    color: rgba(255,0,0,0.6);
-    font-size: 1.8rem !important;
-}
-
-.card .card-header .title{
+.list.card .card-header .title{
     display: flex;
     justify-content: space-between;
     margin: 0;
     align-items: center;
 }
-.card .card-header .form-group .form-control{
+.list.card .card-header .form-group .form-control{
   margin-bottom: 0;
 }
 .card .card-header span{
     display: flex;
+    align-items: center;
 }
-.card .card-header i{
-  margin-right: 12px;
+.list.card .card-header i{
+  margin-right: 7px;
+}
+
+.material-icons{
   font-size: 20px;
 }
-.card .card-header .form-group {
+
+.list.card .card-header .form-group {
     padding-bottom: 2px;
     margin: 0;
     height: 35px;
 }
+.list thead tr th:last-child {
+    text-align: center;
+    max-width: 50px;
+}
 
+.list table .material-icons {
+    font-size: 16px;
+}
+
+.card .table tr td:last-child {
+    max-width: 50px;
+    width: 10%;
+    text-align: center;
+}
 .card .card-header .form-group label.control-label {
     color: white;
 }
@@ -136,9 +171,14 @@ label.control-label.disabled{
   color: white;
   letter-spacing: 0.12rem;
 }
-.card .card-header {
+.list.card .card-header {
   height: 60px;
 }
+
+.dashboard-item.card-stats .card-header {
+    position: absolute;
+}
+
 /*dropdown select custom css*/
 select{
     display: none;
@@ -179,7 +219,8 @@ select{
 }
 
 .bootstrap-select {
-    min-width: 160px;
+    max-width: 160px;
+    width: 100%;
 }
 .dropdown-menu{
     margin: 0;
@@ -197,17 +238,4 @@ select{
 
 .dropdown-menu.inner li .material-icons{
     display: none;
-}
-
-label.control-label.form-label {
-    font-size: 1.8rem!important;
-    font-weight: 300;
-    top: -15px !important;
-}
-
-.dashboard-item.card-stats .card-header {
-    position: absolute;
-}
-.flex{
-  display: flex;
 }

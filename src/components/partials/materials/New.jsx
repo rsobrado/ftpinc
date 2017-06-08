@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class New extends Component {
 	constructor(props) {
 		super(props);
-		this.state = 	{ materials : [props.materials] };
+		this.state = 	{ materials : [] };
 	};
 
 	newMaterial(event) {
@@ -49,16 +49,16 @@ class New extends Component {
 							<div className="row">
 								<div className="col-md-12">
 									<div className="form-group label-floating">
-										<label className="control-label">Description</label>
-										<input ref="description" type="text" className="form-control" />
+										<label className="control-label">Cost</label>
+										<input ref="cost" type="number" className="form-control" required/>
 									</div>
 								</div>
 							</div>
 							<div className="row">
 								<div className="col-md-12">
 									<div className="form-group label-floating">
-										<label className="control-label">Cost</label>
-										<input ref="cost" type="number" className="form-control" required/>
+										<label className="control-label">Description</label>
+										<input ref="description" type="textarea" className="form-control" />
 									</div>
 								</div>
 							</div>

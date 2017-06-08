@@ -10,7 +10,7 @@ class Workers extends Component {
 
 	componentDidMount() {
 		var that = this;
-		var url = '../data/workers.js?format=json'
+		var url = '/data/workers.js?format=json'
 
 		fetch(url)
 		.then(function(response) {
@@ -23,16 +23,26 @@ class Workers extends Component {
 			that.setState({ workers: data });
 		});
 	}
+
+  onAddWorker(workersUpdate){
+    console.log(workersUpdate);
+    this.setState({workers : workersUpdate});
+  }
+
+  onDeleteWorker(workerKey){
+    console.log(workerKey);
+    let workers = this.state.workers;
+    let index = workers.findIndex(x => x.key === workerKey);
+    workers.splice(index,1);
+    this.setState({workers : workers});
+  }
+
   render() {
 	return (
 		<div className="container-fluid">
 			<div className="row">
-				<div className="col-md-12">
-					<div className="panel-group" id="accordion">
-						<New />
-						<List workers={this.state.workers}/>
-					</div>
-				</div>
+				<New workers={this.state.workers} onAddWorker={this.onAddWorker.bind(this)}/>
+				<List workers={this.state.workers} onDeleteWorker={this.onDeleteWorker.bind(this)}/>
 			</div>
 		</div>
 	);

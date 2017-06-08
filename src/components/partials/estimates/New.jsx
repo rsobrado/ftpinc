@@ -17,7 +17,7 @@ class New extends Component {
 		var initialCost = parseInt(this.refs.cost.value,10);
 		var discount = parseFloat(initialCost * (amount/100));
 		var subTotal = parseFloat(initialCost - discount);
-		var tax = parseFloat(subTotal * 0.0685).toFixed(2);
+		var tax = parseFloat(subTotal * 0.06875).toFixed(2);
 		var finalCost = subTotal + parseFloat(tax);
 
 		this.updateValues(amount,subTotal,finalCost,tax);
@@ -28,9 +28,9 @@ class New extends Component {
 		var initialCost = parseInt(amount,10);
 		var discount = parseFloat(initialCost * (this.refs.discount.value/100));
 		var subTotal = parseFloat(initialCost - discount);
-		var tax = parseFloat(subTotal * 0.0685).toFixed(2);
+		var tax = parseFloat(subTotal * 0.06875).toFixed(2);
 		var finalCost = subTotal + parseFloat(tax);
-		
+
 		if (amount==='') {
 			tax = 0;
 			finalCost = 0;
@@ -44,7 +44,7 @@ class New extends Component {
 		this.setState({tax: tax});
 		this.setState({total: finalcost.toFixed(2)});
 	};
-	
+
 	render() {
 		return (
 			<div className="panel panel-default">
@@ -206,7 +206,7 @@ class New extends Component {
 																							</label>
 																						</div>
 																					</li>
-																				</ul>   
+																				</ul>
 																			</div>
 																			<div className="col-md-4">
 																				<ul>
@@ -259,7 +259,7 @@ class New extends Component {
 																							</label>
 																						</div>
 																					</li>
-																				</ul>   
+																				</ul>
 																			</div>
 																			<div className="col-md-4">
 																				<ul>
@@ -291,14 +291,14 @@ class New extends Component {
 																							</label>
 																						</div>
 																					</li>
-																				</ul>   
+																				</ul>
 																			</div>
 																		</div>
 																	</div>
 																	<hr />
 																</section>
 																<section id="sanding-scraping">
-																	<h6>sanding &amp; scraping</h6>
+																	<h6>sanding &amp; scraping for Siding</h6>
 																	<div className="card card-plain">
 																		<div className="card-content table-responsive">
 																			<table  className="table table-hover sanding-scraping">
@@ -489,6 +489,219 @@ class New extends Component {
 																	</div>
 																	<hr />
 																</section>
+																<section id="sanding-scraping">
+																	<h6>sanding &amp; scraping for Trim</h6>
+																	<div className="card card-plain">
+																		<div className="card-content table-responsive">
+																			<table  className="table table-hover sanding-scraping">
+																				<thead>
+																					<tr><th></th>
+																						<th>All</th>
+																						<th>Front</th>
+																						<th>Right</th>
+																						<th>Left</th>
+																						<th>Rear</th>
+																						<th>Garage</th>
+																					</tr>
+																				</thead>
+																				<tbody>
+																					<tr>
+																						<td className="task"><b>Scrape:</b></td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="task"><b>Strip Flat Areas:<br/><small>(95% bare wood)</small></b></td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="task"><b>Finish hand sand:</b></td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																						<td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="task"><b>Spot Sanding:</b></td>
+																						<td>
+																						</td>
+																						<td>
+																							<div className="form-group label-floating">
+																								<label className="control-label form-label">%</label>
+																								<input type="number" className="form-control text-success" min="0" max="100" />
+																							</div>
+																						</td>
+																						<td>
+																							<div className="form-group label-floating">
+																								<label className="control-label form-label">%</label>
+																								<input type="number" min="0" max="100" className="form-control text-success" />
+																							</div>
+																						</td>
+																						<td>
+																							<div className="form-group label-floating">
+																								<label className="control-label form-label">%</label>
+																								<input type="number" min="0" max="100" className="form-control text-success" />
+																							</div>
+																						</td>
+																						<td>
+																							<div className="form-group label-floating">
+																								<label className="control-label form-label">%</label>
+																								<input type="number" max="100" min="0" className="form-control text-success" />
+																							</div>
+																						</td>
+																						<td>
+																							<div className="form-group label-floating">
+																								<label className="control-label form-label">%</label>
+																								<input type="number" min="0" max="100" className="form-control text-success" />
+																							</div>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td className="task"><b>N/A</b></td>
+																						<td>
+																						</td>
+																							<div className="checkbox">
+																								<label>
+																									<input type="checkbox" name="optionsCheckboxes" />
+																								</label>
+																							</div>
+																						<td>
+																						</td>
+																						<td>
+																						</td>
+																						<td>
+																						</td>
+																						<td>
+																						</td>
+																						<td>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+
+																	<hr />
+																</section>
 																<section id="cleaning-preparation">
 																	<h6>Cleaning &amp; Preparation</h6>
 
@@ -516,7 +729,7 @@ class New extends Component {
 																						</label>
 																					</div>
 																				</li>
-																			</ul>   
+																			</ul>
 																		</div>
 																		<div className="col-md-4">
 																			<ul>
@@ -541,7 +754,7 @@ class New extends Component {
 																						</label>
 																					</div>
 																				</li>
-																			</ul>   
+																			</ul>
 																		</div>
 																		<div className="col-md-4">
 																			<ul>
@@ -566,7 +779,7 @@ class New extends Component {
 																						</label>
 																					</div>
 																				</li>
-																			</ul>   
+																			</ul>
 																		</div>
 																	</div>
 																	<hr />
@@ -613,7 +826,7 @@ class New extends Component {
 																						</label>
 																					</div>
 																				</li>
-																			</ul>   
+																			</ul>
 																		</div>
 																		<div className="col-md-4">
 																			<h5>Priming</h5>
@@ -648,7 +861,7 @@ class New extends Component {
 																						<option value="1">Full Prime</option>
 																					</select>
 																				</li>
-																			</ul>   
+																			</ul>
 																		</div>
 																		<div className="col-md-4">
 																			<h5>Painting</h5>
@@ -682,9 +895,9 @@ class New extends Component {
 																					<select className="selectpicker" data-style="btn btn-primary " title="Single Select" data-size="7">
 																						<option  defaultValue> Oil</option>
 																						<option value="1">Latex</option>
-																					</select>   
+																					</select>
 																				</li>
-																			</ul>   
+																			</ul>
 																		</div>
 																	</div>
 																	<hr />
@@ -715,7 +928,7 @@ class New extends Component {
 																<section id="pricing-taxes">
 																	<div className="row">
 																		<div className="col-md-9">
-																			<h3 id="price">All Labor and Materials</h3> 
+																			<h3 id="price">All Labor and Materials</h3>
 																		</div>
 																		<div className="col-md-3 ">
 																			<div className="form-group label-floating">
@@ -726,7 +939,7 @@ class New extends Component {
 																	</div>
 																	<div className="row">
 																		<div className="col-md-9">
-																			<h3 id="price">Discount</h3>  
+																			<h3 id="price">Discount</h3>
 																		</div>
 																		<div className="col-md-3 ">
 																			<div className="form-group label-floating">
@@ -737,7 +950,7 @@ class New extends Component {
 																	</div>
 																	<div className="row">
 																		<div className="col-md-9">
-																			<h3 id="tax">Sales Tax <small>(6.85%)</small></h3>
+																			<h3 id="tax">Sales Tax <small>(6.875%)</small></h3>
 																		</div>
 																		<div className="col-md-3 ">
 																			<div className="form-group label-floating">
@@ -763,9 +976,9 @@ class New extends Component {
 																			<li>Areas where a 5 inches sanding disc and Hepa Vac shroud can not fit will not be stripped.</li>
 																			<li>Siding on New Additions, will not be stripped to bare wood if its is in good condition unless specifically noted.</li>
 																			<li>
-																				<b>Trim Preparation</b> 
+																				<b>Trim Preparation</b>
 																				<p>We can sand most flat. wide. vertical pieces of trim to bare wood if needed (windows frams, fascia etc) Cerved boards, railing, spindles, small areas and soffits will be lightly sanded and are not stimated to be stripped to bare wood in this estimates unless specifically noted. It is common to see level differences between old and new paint unless additional work is done.</p>
-																			</li> 
+																			</li>
 																			<li>
 																				<p ><b>* </b>Windows Behind Storms and screend are not Included. Separate Price.</p>
 																			</li>
@@ -782,11 +995,11 @@ class New extends Component {
 																			<li><b>Payment &amp; Deposit</b> </li>
 																			<li><b>$500</b> as deposit when contract is agreed.</li>
 																			<li><b>30%</b> upon starting the project.</li>
-																			<li><b>35%</b> progress payment.</li> 
+																			<li><b>35%</b> progress payment.</li>
 																			<li>Balance due completition.</li>
 																		</ul>
-																	</blockquote> 
-																</section>  
+																	</blockquote>
+																</section>
 															</div>
 															<div className="tab-pane" id="interior">
 																<table className="table">

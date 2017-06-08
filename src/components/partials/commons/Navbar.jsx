@@ -31,6 +31,11 @@ class Navbar extends Component {
 								<li><a href="#">Another One</a></li>
 							</ul>
 						</li>
+            <li className=" hidden-xs">
+              <Link  to="/" className="dropdown-toggle" data-toggle="dropdown">
+                <i className="material-icons">dashboard</i>
+              </Link>
+            </li>
 					</ul>
 				</div>
 			</div>
