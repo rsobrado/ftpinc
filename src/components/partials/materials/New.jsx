@@ -32,7 +32,7 @@ class New extends Component {
 	render() {
 		return (
 			<div className="col-md-4">
-				<div className="card">
+				<div className="list card">
 					<div className="card-header" data-background-color="blue">
 						<h4 className="title"><span><i className="material-icons">add_box</i> New Material</span></h4>
 					</div>

@@ -23,16 +23,24 @@ class Clients extends Component {
 			that.setState({ clients: data });
 		});
 	}
+
+  onAddClient(clientUpdate){
+    this.setState({clients : clientUpdate});
+  }
+
+  onDeleteClient(clientKey){
+    let clients = this.state.clients;
+    let index = clients.findIndex(x => x.key === clientKey);
+    clients.splice(index,1);
+    this.setState({clients : clients});
+  }
+
   render() {
 	return (
 		<div className="container-fluid">
 			<div className="row">
-				<div className="col-md-12">
-					<div className="panel-group" id="accordion">
-						<New />
-						<List clients={this.state.clients}/>
-					</div>
-				</div>
+				<New workers={this.state.clients} onAddClient={this.onAddClient.bind(this)}/>
+				<List clients={this.state.clients} onDeleteClient={this.onDeleteClient.bind(this)}/>
 			</div>
 		</div>
 	);

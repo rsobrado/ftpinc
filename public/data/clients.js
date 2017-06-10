@@ -9,7 +9,8 @@
     "city" : "",
     "country" : "",
     "zip" : "",
-    "additional info": ""
+    "additional info": "",
+    "projects" : []
   },
   {
     "key" : "0011236",
@@ -21,7 +22,8 @@
     "city" : "",
     "country" : "",
     "zip" : "",
-    "additional info": ""
+    "additional info": "",
+    "projects" : []
   },
   {
     "key" : "0011227",
@@ -33,6 +35,7 @@
     "city" : "",
     "country" : "",
     "zip" : "",
-    "additional info": ""
+    "additional info": "",
+    "projects" : []
   }
 ]
